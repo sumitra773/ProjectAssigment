@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ProjectAssigment</string>
+    <string name="already_a_member_login">Already a Member? <font color="#E26a43">Login</font></string>
+    <string name="continue_without_login">Continue without login</string>
+    <string name="get_started">GET STARTED</string>
+    <string name="hunger_don_t_wait">HUNGER DON\'t WAIT</string>
+    <string name="hurry">HURRY!!</string>
+    <string name="auto_detect_in_00_00_resend">Auto-detect in 00:00 <font color="#E26a43">RESEND</font></string>
+</resources>

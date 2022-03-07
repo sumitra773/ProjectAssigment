@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/view_top"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:background="@drawable/wave_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                app:layout_constraintStart_toStartOf="@id/view_top"
+                app:layout_constraintEnd_toEndOf="@id/view_top"
+                app:layout_constraintTop_toTopOf="@id/view_top"
+                app:layout_constraintBottom_toBottomOf="@id/view_top"
+                android:src="@drawable/img_pickup" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:text="LOGIN"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/view_top"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/tv_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Enter your Mobile Number"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                tools:layout_editor_absoluteX="50dp" />
+
+            <EditText
+                android:id="@+id/et_mobile_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_big"
+                android:inputType="number"
+                android:padding="16dp"
+                android:hint="+919999999999"
+                app:layout_constraintStart_toStartOf="@+id/tv_mobile"
+                app:layout_constraintEnd_toEndOf="@id/tv_mobile"
+                app:layout_constraintTop_toBottomOf="@+id/tv_mobile" />
+
+            <TextView
+                android:id="@+id/tv_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:text="PASSWORD"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/et_mobile_number"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/tv_enter_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Enter your Password"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_password"
+                tools:layout_editor_absoluteX="50dp" />
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_big"
+                android:inputType="text"
+                android:padding="16dp"
+                android:hint="password"
+                app:layout_constraintStart_toStartOf="@+id/tv_enter_password"
+                app:layout_constraintEnd_toEndOf="@id/tv_enter_password"
+                app:layout_constraintTop_toBottomOf="@+id/tv_enter_password" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:constraint_referenced_ids="et_password,tv_enter_password,tv_password"/>
+
+            <TextView
+                android:id="@+id/tv_verify_otp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:text="VERIFY OTP"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/et_mobile_number"
+                app:layout_constraintTop_toBottomOf="@+id/et_mobile_number" />
+
+            <TextView
+                android:id="@+id/tv_otp_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="OTP Send to 0912753232"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_verify_otp"
+                tools:layout_editor_absoluteX="50dp" />
+
+            <in.aabhasjindal.otptextview.OtpTextView
+                android:id="@+id/otp_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_big"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                app:height="40dp"
+                app:width="40dp"
+                app:bar_enabled="true"
+                app:bar_height="2dp"
+                app:length="6"
+                app:otp_text_size="24dp"
+                app:layout_constraintStart_toStartOf="@id/tv_otp_number"
+                app:layout_constraintEnd_toEndOf="@id/tv_otp_number"
+                app:layout_constraintTop_toBottomOf="@+id/tv_otp_number"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/tv_change_mobile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Change Mobile Number"
+                android:textSize="12sp"
+                android:textColor="#E26a43"
+                app:layout_constraintTop_toBottomOf="@+id/otp_view"
+                app:layout_constraintStart_toStartOf="@+id/otp_view"/>
+
+            <TextView
+                android:id="@+id/tv_auto_detect_otp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@string/auto_detect_in_00_00_resend"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@+id/otp_view"
+                app:layout_constraintEnd_toEndOf="@+id/otp_view"/>\
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="tv_auto_detect_otp, tv_change_mobile, tv_otp_number, tv_verify_otp, otp_view"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+    <TextView
+        android:id="@+id/btn_proceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:padding="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="PROCEED"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+</LinearLayout>
+
